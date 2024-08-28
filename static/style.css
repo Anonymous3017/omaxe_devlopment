@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    background: rgb(44, 47, 59);
+    background: -webkit-linear-gradient(to right, rgb(40, 59, 34), rgb(54, 60, 70), rgb(32, 32, 43));
+    background: linear-gradient(to right, rgb(38, 51, 61), rgb(50, 55, 65), rgb(33, 33, 78));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.chat-container {
+    width: 80%;
+    max-width: 90%;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.chat-window {
+    height: 500px;
+    overflow-y: auto;
+    padding: 20px;
+    border: none;
+}
+
+.chat-output {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container {
+    display: flex;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#user-input {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #0056b3;
+    border-radius: 30px;
+    background-color: rgb(20,22,27);
+    color: white;
+    outline: none; 
+    transition: border 0.3s ease;
+}
+
+
+#user-input:focus {
+    border: 2px solid transparent; 
+}
+
+
+
+#send-icon {
+    font-size: 24px; 
+    color: #ffffff;  
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease; 
+    margin-left: 15px;
+}
+
+#send-icon:hover {
+    color: #0056b3;
+    transform: scale(1.1);
+}
+
+
+#send-icon:active {
+    transform: scale(0.95);
+}
+
+
+#send-icon {
+    padding: 10px;        
+    border-radius: 50%;    
+    display: inline-block;  
+}
+
+
+#send-btn:hover {
+    background-color: #0056b3;
+}
+
+.message {
+    margin-bottom: 15px;
+    max-width: 80%;
+    padding: 10px;
+    border-radius: 15px;
+    line-height: 1.4;
+}
+
+.message.user {
+    background-color: #58cc71;
+    color: #fff;
+    align-self: flex-end;
+    border-bottom-right-radius: 0;
+}
+
+.message.bot {
+    background-color: rgb(102, 208, 232);
+    color: #333;
+    align-self: flex-start;
+    border-bottom-left-radius: 0;
+}
+
+
+
+
+.chat-output .bot .message {
+    position: relative;
+}
+
+.chat-output .bot .message .spinner {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

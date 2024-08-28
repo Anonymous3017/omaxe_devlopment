@@ -167,17 +167,6 @@ def send_email(email, category, query):
         return render_template("chat.html", status="Successfully", scroll_to_contact=scroll_to_contact)
  
 # Route for chat
-@app.route("/get", methods=["GET", "POST"])
-def chat():
-   
-    question = request.form.get("msg")
-    response = gen_response(question)
-    # print(response)
-    cleaned_response = clean_response(response)
-    html_response = markdown.markdown(cleaned_response)
-    return jsonify({'response': html_response})
-
-
 @app.route("/api/question", methods=["POST"])
 def api_question():
     data = request.get_json()
@@ -187,7 +176,7 @@ def api_question():
     
     response = gen_response(question)
     cleaned_response = clean_response(response)
-    html_response = markdown.markdown(cleaned_response)
+    # html_response = markdown.markdown(cleaned_response)
     return jsonify({'response': cleaned_response})
     
         
